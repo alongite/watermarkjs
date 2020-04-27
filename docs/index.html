@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watermark</title>
+    <script src="../watermark.js"></script>
+    <style>
+        #edit{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="edit">
+        <textarea id="text"></textarea><br/>
+        <button id="change">改变水印文字 / change</button>
+    </div>
+    <script>
+        let text = document.querySelector('#text');
+        text.value = 'watermark';
+        let destroyHandler = watermark('body', text.value);
+        let change = document.querySelector('#change');
+        change.addEventListener('click', function(){
+            destroyHandler();
+            destroyHandler = watermark('body', text.value);
+        })
+        
+    </script>
+</body>
+</html>
