@@ -29,7 +29,7 @@ function watermark(el, text, options = {}){
     ctx.rotate( flag * degree / 180 * Math.PI);
     ctx.textBaseline = 'middle';
     ctx.strokeStyle = opts.color;
-    ctx.strokeText(text, -width / 2 + offset, 0);
+    ctx.strokeText(text, -width / 2 + opts.offset, 0);
     ctx.restore();
     
     let imgData = canvas.toDataURL();
