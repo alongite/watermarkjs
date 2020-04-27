@@ -7,6 +7,7 @@ function watermark(el, text, options = {}){
         opacity: .5,
         degree: -30,
         offset: 0,
+        zIndex: 99999
     }, options)
 
     let height = 14;
@@ -43,6 +44,7 @@ function watermark(el, text, options = {}){
     div.style.bottom = 0;
     div.style.right = 0;
     div.style.opacity = opts.opacity;
+    div.style.zIndex = opts.zIndex;
     if(div.offsetParent !== $el){
         $el.style.position = 'relative';
     }
