@@ -5,7 +5,8 @@ function watermark(el, text, options = {}){
         width: undefined,
         height: undefined,
         opacity: .5,
-        degree: -30
+        degree: -30,
+        offset: 0,
     }, options)
 
     let height = 14;
@@ -28,7 +29,7 @@ function watermark(el, text, options = {}){
     ctx.rotate( flag * degree / 180 * Math.PI);
     ctx.textBaseline = 'middle';
     ctx.strokeStyle = opts.color;
-    ctx.strokeText(text, -width / 2, 0);
+    ctx.strokeText(text, -width / 2 + offset, 0);
     ctx.restore();
     
     let imgData = canvas.toDataURL();
